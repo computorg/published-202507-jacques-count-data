@@ -826,8 +826,7 @@ Figure&nbsp;6: Bayesian Information Criterion (BIC) for the independent Poisson 
 </div>
 </div>
 </div>
-<p>In order to illustrate the results, we plot the cluster means according to the 24 variable mean parameters per cluster. For each variable not in the chosen variable set, a Poisson regression model is fitted with the chosen variables as predictors. Forward and backwards variable selection is conducted on this regression, if the regression model has any predictor variables, then the variable is called “redundant” and if the regression model has no predictor variables, then the variable is called “irrelevant”.</p>
-<p><a href="#fig-Running-result1" class="quarto-xref">Figure&nbsp;7</a> shows the cluster mean for each variable, where the label indicates if the variable is irrelevant for clustering (“I”), redundant (“R”) or useful (the label is then the cluster number).</p>
+<p>In order to illustrate the results, we plot the cluster means according to the 24 variable mean parameters per cluster. For each variable not in the chosen variable set, a Poisson regression model is fitted with the chosen variables as predictors. Forward and backwards variable selection is conducted on this regression, if the regression model has any predictor variables, then the variable is called “redundant” and if the regression model has no predictor variables, then the variable is called “irrelevant”. <a href="#fig-Running-result1" class="quarto-xref">Figure&nbsp;7</a> shows the cluster mean for each variable, where the label indicates if the variable is irrelevant for clustering (“I”), redundant (“R”) or useful (the label is then the cluster number).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-Running-result1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -843,7 +842,23 @@ Figure&nbsp;7: Cluster means and usefulness of the variables.
 </div>
 </div>
 <p>The variables discriminate the clusters pacing strategies of the runners are the number of laps covered during the last two thirds of the race (except during the 13th and 23rd hours). The number of laps covered during the first eight hours does not provide any additional clustering information, and even no information at all for the number of laps covered during the first hour.</p>
-<p><a href="#fig-Running-result2" class="quarto-xref">Figure&nbsp;8</a> shows boxplots of the total number of loops covered by the runners in each of the clusters.</p>
+<p><a href="#fig-Running-result3" class="quarto-xref">Figure&nbsp;8</a> plots the density map per clusters. Area of high density (red) indicates the hours and the corresponding average number of laps specific of each cluster.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-Running-result3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Running-result3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Jacques_Murphy_files/figure-html/fig-Running-result3-1.svg" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Running-result3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Density maps per cluster
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Cluster 5 are clearly the most efficient runners. Looking at the running strategy in <a href="#fig-Running-result1" class="quarto-xref">Figure&nbsp;7</a> and <a href="#fig-Running-result3" class="quarto-xref">Figure&nbsp;8</a>, we can see that they start as runners of Cluster 1 and Cluster 2, but they managed to keep a constant pace on the second part of the race, unlike those of the other two clusters which faltered. Runners of Cluster 3 has covered the fewest number of laps. Indeed, looking at their running strategy, we can see that most of these runners stop after the first third of the race. Cluster 6 is relatively similar to Cluster 3, but runners manage to continue running until half of the race is completed. Finally, Cluster 4 obtains slightly better results than Cluster 6, starting more carefully, and managing to run until the end of the race, even if the pace of the last hours is not very constant.</p>
+<p>Finally, <a href="#fig-Running-result2" class="quarto-xref">Figure&nbsp;9</a> shows boxplots of the total number of loops covered by the runners in each of the clusters.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-Running-result2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -852,13 +867,12 @@ Figure&nbsp;7: Cluster means and usefulness of the variables.
 <img src="Jacques_Murphy_files/figure-html/fig-Running-result2-1.svg" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Running-result2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Number of loops covered by the runners of each clusters.
+Figure&nbsp;9: Number of loops covered by the runners of each clusters.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Cluster 5 are clearly the most efficient runners. Looking at the running strategy in <a href="#fig-Running-result1" class="quarto-xref">Figure&nbsp;7</a>, we can see that they start as runners of Cluster 1 and Cluster 2, but they managed to keep a constant pace on the second part of the race, unlike those of the other two clusters which faltered. Runners of Cluster 3 has covered the fewest number of laps. Indeed, looking at their running strategy, we can see that most of these runners stop after the first third of the race. Cluster 6 is relatively similar to Cluster 3, but runners manage to continue running until half of the race is completed. Finally, Cluster 4 obtains slightly better results than Cluster 6, starting more carefully, and managing to run until the end of the race, even if the pace of the last hours is not very constant.</p>
 </section>
 <section id="discussion" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Discussion</h1>
@@ -2181,99 +2195,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-722"><a href="#cb9-722" aria-hidden="true" tabindex="-1"></a>predictor variables, then the variable is called "redundant" and if the</span>
 <span id="cb9-723"><a href="#cb9-723" aria-hidden="true" tabindex="-1"></a>regression model has no predictor variables, then the variable is called</span>
 <span id="cb9-724"><a href="#cb9-724" aria-hidden="true" tabindex="-1"></a>"irrelevant".</span>
-<span id="cb9-725"><a href="#cb9-725" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-726"><a href="#cb9-726" aria-hidden="true" tabindex="-1"></a>@fig-Running-result1 shows the cluster mean for each variable, where the</span>
-<span id="cb9-727"><a href="#cb9-727" aria-hidden="true" tabindex="-1"></a>label indicates if the variable is irrelevant for clustering ("I"),</span>
-<span id="cb9-728"><a href="#cb9-728" aria-hidden="true" tabindex="-1"></a>redundant ("R") or useful (the label is then the cluster number).</span>
-<span id="cb9-729"><a href="#cb9-729" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-730"><a href="#cb9-730" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plotrunning, echo=FALSE, fig.align='center', cache = TRUE}</span></span>
-<span id="cb9-731"><a href="#cb9-731" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-Running-result1</span></span>
-<span id="cb9-732"><a href="#cb9-732" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Cluster means and usefulness of the variables."</span></span>
-<span id="cb9-733"><a href="#cb9-733" aria-hidden="true" tabindex="-1"></a><span class="in">matplot(fit$jchosen, t(fit$bestfit$lambda), xlab = 'Hours', ylab = "Number of laps", xaxt = "n",yaxt = "n", xlim = c(1, P), ylim = range(x[,-16]))</span></span>
-<span id="cb9-734"><a href="#cb9-734" aria-hidden="true" tabindex="-1"></a><span class="in">axis(1, at = seq(6, 24, 6),labels = seq(6, 24, 6))</span></span>
-<span id="cb9-735"><a href="#cb9-735" aria-hidden="true" tabindex="-1"></a><span class="in">axis(2, at = 0:9, labels = 0:9)</span></span>
-<span id="cb9-736"><a href="#cb9-736" aria-hidden="true" tabindex="-1"></a><span class="in">abline(v = fit$jchosen, col = "lightgray", lty = 3)</span></span>
-<span id="cb9-737"><a href="#cb9-737" aria-hidden="true" tabindex="-1"></a><span class="in">matplot(fit$jchosen, t(fit$bestfit$lambda), type = "p", add = TRUE)</span></span>
-<span id="cb9-738"><a href="#cb9-738" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-739"><a href="#cb9-739" aria-hidden="true" tabindex="-1"></a><span class="in">G &lt;- fit$bestfit$G</span></span>
-<span id="cb9-740"><a href="#cb9-740" aria-hidden="true" tabindex="-1"></a><span class="in">Z &lt;- fit$bestfit$Z</span></span>
-<span id="cb9-741"><a href="#cb9-741" aria-hidden="true" tabindex="-1"></a><span class="in">x &lt;- as.matrix(x)</span></span>
-<span id="cb9-742"><a href="#cb9-742" aria-hidden="true" tabindex="-1"></a><span class="in">xmeans &lt;- t(Z) %*% x / apply(Z, 2, sum)</span></span>
-<span id="cb9-743"><a href="#cb9-743" aria-hidden="true" tabindex="-1"></a><span class="in">jremove &lt;- setdiff(1:P, fit$jchosen)</span></span>
-<span id="cb9-744"><a href="#cb9-744" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-745"><a href="#cb9-745" aria-hidden="true" tabindex="-1"></a><span class="in">vartype &lt;- rep(NA, P)</span></span>
-<span id="cb9-746"><a href="#cb9-746" aria-hidden="true" tabindex="-1"></a><span class="in">vartype[fit$jchosen] &lt;- "Clustering"</span></span>
-<span id="cb9-747"><a href="#cb9-747" aria-hidden="true" tabindex="-1"></a><span class="in">for (j in jremove)</span></span>
-<span id="cb9-748"><a href="#cb9-748" aria-hidden="true" tabindex="-1"></a><span class="in">{</span></span>
-<span id="cb9-749"><a href="#cb9-749" aria-hidden="true" tabindex="-1"></a><span class="in">  y &lt;- x[, j]</span></span>
-<span id="cb9-750"><a href="#cb9-750" aria-hidden="true" tabindex="-1"></a><span class="in">  Xregr &lt;- x[, fit$jchosen]</span></span>
-<span id="cb9-751"><a href="#cb9-751" aria-hidden="true" tabindex="-1"></a><span class="in">  datregr &lt;- data.frame(y, Xregr)</span></span>
-<span id="cb9-752"><a href="#cb9-752" aria-hidden="true" tabindex="-1"></a><span class="in">  fitglm &lt;- glm(y ~ ., family = "poisson", data = datregr)</span></span>
-<span id="cb9-753"><a href="#cb9-753" aria-hidden="true" tabindex="-1"></a><span class="in">  fit1 &lt;- glm(y ~ 1, family = "poisson", data = datregr)</span></span>
-<span id="cb9-754"><a href="#cb9-754" aria-hidden="true" tabindex="-1"></a><span class="in">  modelscope &lt;- list(lower = formula(fit1), upper = formula(fitglm))</span></span>
-<span id="cb9-755"><a href="#cb9-755" aria-hidden="true" tabindex="-1"></a><span class="in">  fitglmb &lt;- step(fit1, scope = modelscope, k = log(N), trace = 0, direction = "forward")</span></span>
-<span id="cb9-756"><a href="#cb9-756" aria-hidden="true" tabindex="-1"></a><span class="in">  fitglmf &lt;- step(fitglm, scope = modelscope, k = log(N), trace = 0, direction = "backward")</span></span>
-<span id="cb9-757"><a href="#cb9-757" aria-hidden="true" tabindex="-1"></a><span class="in">  if (BIC(fitglmf) &lt; BIC(fitglmb)) {fitglms &lt;- fitglmf} else {fitglms &lt;- fitglmb}</span></span>
-<span id="cb9-758"><a href="#cb9-758" aria-hidden="true" tabindex="-1"></a><span class="in">  if (length(coef(fitglms)) &gt; 1)</span></span>
-<span id="cb9-759"><a href="#cb9-759" aria-hidden="true" tabindex="-1"></a><span class="in">  {</span></span>
-<span id="cb9-760"><a href="#cb9-760" aria-hidden="true" tabindex="-1"></a><span class="in">    vartype[j] &lt;- "Redundant"</span></span>
-<span id="cb9-761"><a href="#cb9-761" aria-hidden="true" tabindex="-1"></a><span class="in">    text(rep(j, G), xmeans[, j], rep("R", G), col = 1:G)</span></span>
-<span id="cb9-762"><a href="#cb9-762" aria-hidden="true" tabindex="-1"></a><span class="in">  } else {</span></span>
-<span id="cb9-763"><a href="#cb9-763" aria-hidden="true" tabindex="-1"></a><span class="in">    vartype[j] &lt;- "Irrelevant"</span></span>
-<span id="cb9-764"><a href="#cb9-764" aria-hidden="true" tabindex="-1"></a><span class="in">    text(rep(j, G), xmeans[, j], rep("I", G), col = 1:G)</span></span>
-<span id="cb9-765"><a href="#cb9-765" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
-<span id="cb9-766"><a href="#cb9-766" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
-<span id="cb9-767"><a href="#cb9-767" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb9-768"><a href="#cb9-768" aria-hidden="true" tabindex="-1"></a><span class="in">matplot(1:P, t(xmeans), col = 1:G, type = "c", lty = 1, add = TRUE)</span></span>
-<span id="cb9-769"><a href="#cb9-769" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-770"><a href="#cb9-770" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-771"><a href="#cb9-771" aria-hidden="true" tabindex="-1"></a>The variables discriminate the clusters pacing strategies of</span>
-<span id="cb9-772"><a href="#cb9-772" aria-hidden="true" tabindex="-1"></a>the runners are the number of laps covered during the last two thirds of</span>
-<span id="cb9-773"><a href="#cb9-773" aria-hidden="true" tabindex="-1"></a>the race (except during the 13th and 23rd hours). The number of laps</span>
-<span id="cb9-774"><a href="#cb9-774" aria-hidden="true" tabindex="-1"></a>covered during the first eight hours does not provide any additional</span>
-<span id="cb9-775"><a href="#cb9-775" aria-hidden="true" tabindex="-1"></a>clustering information, and even no information at all for the number of laps</span>
-<span id="cb9-776"><a href="#cb9-776" aria-hidden="true" tabindex="-1"></a>covered during the first hour.</span>
-<span id="cb9-777"><a href="#cb9-777" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-778"><a href="#cb9-778" aria-hidden="true" tabindex="-1"></a>@fig-Running-result2 shows boxplots of the total number of loops covered by the runners in each of the</span>
-<span id="cb9-779"><a href="#cb9-779" aria-hidden="true" tabindex="-1"></a>clusters.</span>
-<span id="cb9-780"><a href="#cb9-780" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-781"><a href="#cb9-781" aria-hidden="true" tabindex="-1"></a><span class="in">```{r ARIrunning, echo = FALSE, message = FALSE, warning=FALSE, fig.align='center'}</span></span>
-<span id="cb9-782"><a href="#cb9-782" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-Running-result2</span></span>
-<span id="cb9-783"><a href="#cb9-783" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Number of loops covered by the runners of each clusters."</span></span>
-<span id="cb9-784"><a href="#cb9-784" aria-hidden="true" tabindex="-1"></a><span class="in">tmp &lt;- sort(as.vector(rowSums(x)), decreasing = TRUE, index.return = TRUE)</span></span>
-<span id="cb9-785"><a href="#cb9-785" aria-hidden="true" tabindex="-1"></a><span class="in">boxplot(rowSums(x) ~ map(Z), xlab = 'Cluster', ylab = 'Total number of laps')</span></span>
-<span id="cb9-786"><a href="#cb9-786" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-787"><a href="#cb9-787" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-788"><a href="#cb9-788" aria-hidden="true" tabindex="-1"></a>Cluster 5  are clearly the most efficient runners. Looking at the running</span>
-<span id="cb9-789"><a href="#cb9-789" aria-hidden="true" tabindex="-1"></a>strategy in @fig-Running-result1, we can see that they start as runners</span>
-<span id="cb9-790"><a href="#cb9-790" aria-hidden="true" tabindex="-1"></a>of Cluster 1 and Cluster 2, but they managed to keep a constant pace on</span>
-<span id="cb9-791"><a href="#cb9-791" aria-hidden="true" tabindex="-1"></a>the second part of the race, unlike those of the other two clusters</span>
-<span id="cb9-792"><a href="#cb9-792" aria-hidden="true" tabindex="-1"></a>which faltered. Runners of Cluster 3 has covered the fewest number of</span>
-<span id="cb9-793"><a href="#cb9-793" aria-hidden="true" tabindex="-1"></a>laps. Indeed, looking at their running strategy, we can see that most of these runners stop after the first third of</span>
-<span id="cb9-794"><a href="#cb9-794" aria-hidden="true" tabindex="-1"></a>the race. Cluster 6 is relatively similar to Cluster 3, but runners</span>
-<span id="cb9-795"><a href="#cb9-795" aria-hidden="true" tabindex="-1"></a>manage to continue running until half of the race is completed. Finally, Cluster 4 obtains</span>
-<span id="cb9-796"><a href="#cb9-796" aria-hidden="true" tabindex="-1"></a>slightly better results than Cluster 6, starting more carefully, and</span>
-<span id="cb9-797"><a href="#cb9-797" aria-hidden="true" tabindex="-1"></a>managing to run until the end of the race, even if the pace of the last</span>
-<span id="cb9-798"><a href="#cb9-798" aria-hidden="true" tabindex="-1"></a>hours is not very constant.</span>
-<span id="cb9-799"><a href="#cb9-799" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-800"><a href="#cb9-800" aria-hidden="true" tabindex="-1"></a><span class="fu"># Discussion</span></span>
-<span id="cb9-801"><a href="#cb9-801" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-802"><a href="#cb9-802" aria-hidden="true" tabindex="-1"></a>A method for clustering and variable selection for multivariate count data has been proposed. The method is shown to give excellent performance on both simulated and real data examples. The method selects set of relevant variables for clustering and other variables are not selected if they are irrelevant or redundate for clustering purposes. </span>
-<span id="cb9-803"><a href="#cb9-803" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-804"><a href="#cb9-804" aria-hidden="true" tabindex="-1"></a>The proposed method is shown to give interesting insights in the application domain, where some clusters members are shown to perform better overall to others and the benefits of constant (or near constant pacing) are shown. </span>
-<span id="cb9-805"><a href="#cb9-805" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-806"><a href="#cb9-806" aria-hidden="true" tabindex="-1"></a>The level of variable selection is determined by the relative performance of the two models (as shown in @sec-interpretation) is compared. Alternative models to the Poisson GLM model which have greater flexibility could lead to a smaller set of selected variables than the proposed method achieves. This is a topic for future research. </span>
-<span id="cb9-807"><a href="#cb9-807" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-808"><a href="#cb9-808" aria-hidden="true" tabindex="-1"></a>The proposed method is based on a conditionally independent Poisson mixture model for the selected variables. It could be argued that the conditional independence assumption is unrealistic in the application. @Hand2001 consider the implication of incorrectly assuming conditional independence in a classification setting and show that it can make the group membership probabilities over confident. Furthermore, in the conditional independent Poisson mixture model, the number of clusters can be upwardly biased, where extra clusters are included to model dependence in the data. The approach taken in the paper could be extended to use other multivariate count distributions, including multivariate distributions without the conditional independence assumption <span class="co">[</span><span class="ot">eg. @Karlis2018; @Karlis_2007; @Inouye_2017</span><span class="co">]</span>.</span>
-<span id="cb9-809"><a href="#cb9-809" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-810"><a href="#cb9-810" aria-hidden="true" tabindex="-1"></a>The code for the proposed approach will be made available as an R package. </span>
-<span id="cb9-811"><a href="#cb9-811" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-812"><a href="#cb9-812" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-813"><a href="#cb9-813" aria-hidden="true" tabindex="-1"></a><span class="fu"># Acknowlegements</span></span>
-<span id="cb9-814"><a href="#cb9-814" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-815"><a href="#cb9-815" aria-hidden="true" tabindex="-1"></a>This work was supported by the Science Foundation Ireland Insight</span>
-<span id="cb9-816"><a href="#cb9-816" aria-hidden="true" tabindex="-1"></a>Research Centre (SFI/12/RC/2289_P2) and a visit to the Collegium --</span>
-<span id="cb9-817"><a href="#cb9-817" aria-hidden="true" tabindex="-1"></a>Institut d'Études Avancées de Lyon.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb9-725"><a href="#cb9-725" aria-hidden="true" tabindex="-1"></a>@fig-Running-result1 shows the cluster mean for each variable, where the</span>
+<span id="cb9-726"><a href="#cb9-726" aria-hidden="true" tabindex="-1"></a>label indicates if the variable is irrelevant for clustering ("I"),</span>
+<span id="cb9-727"><a href="#cb9-727" aria-hidden="true" tabindex="-1"></a>redundant ("R") or useful (the label is then the cluster number).</span>
+<span id="cb9-728"><a href="#cb9-728" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-729"><a href="#cb9-729" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plotrunning, echo=FALSE, fig.align='center', cache = TRUE}</span></span>
+<span id="cb9-730"><a href="#cb9-730" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-Running-result1</span></span>
+<span id="cb9-731"><a href="#cb9-731" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Cluster means and usefulness of the variables."</span></span>
+<span id="cb9-732"><a href="#cb9-732" aria-hidden="true" tabindex="-1"></a><span class="in">matplot(fit$jchosen, t(fit$bestfit$lambda), xlab = 'Hours', ylab = "Number of laps", xaxt = "n",yaxt = "n", xlim = c(1, P), ylim = range(x[,-16]))</span></span>
+<span id="cb9-733"><a href="#cb9-733" aria-hidden="true" tabindex="-1"></a><span class="in">axis(1, at = seq(6, 24, 6),labels = seq(6, 24, 6))</span></span>
+<span id="cb9-734"><a href="#cb9-734" aria-hidden="true" tabindex="-1"></a><span class="in">axis(2, at = 0:9, labels = 0:9)</span></span>
+<span id="cb9-735"><a href="#cb9-735" aria-hidden="true" tabindex="-1"></a><span class="in">abline(v = fit$jchosen, col = "lightgray", lty = 3)</span></span>
+<span id="cb9-736"><a href="#cb9-736" aria-hidden="true" tabindex="-1"></a><span class="in">matplot(fit$jchosen, t(fit$bestfit$lambda), type = "p", add = TRUE)</span></span>
+<span id="cb9-737"><a href="#cb9-737" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-738"><a href="#cb9-738" aria-hidden="true" tabindex="-1"></a><span class="in">G &lt;- fit$bestfit$G</span></span>
+<span id="cb9-739"><a href="#cb9-739" aria-hidden="true" tabindex="-1"></a><span class="in">Z &lt;- fit$bestfit$Z</span></span>
+<span id="cb9-740"><a href="#cb9-740" aria-hidden="true" tabindex="-1"></a><span class="in">x &lt;- as.matrix(x)</span></span>
+<span id="cb9-741"><a href="#cb9-741" aria-hidden="true" tabindex="-1"></a><span class="in">xmeans &lt;- t(Z) %*% x / apply(Z, 2, sum)</span></span>
+<span id="cb9-742"><a href="#cb9-742" aria-hidden="true" tabindex="-1"></a><span class="in">jremove &lt;- setdiff(1:P, fit$jchosen)</span></span>
+<span id="cb9-743"><a href="#cb9-743" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-744"><a href="#cb9-744" aria-hidden="true" tabindex="-1"></a><span class="in">vartype &lt;- rep(NA, P)</span></span>
+<span id="cb9-745"><a href="#cb9-745" aria-hidden="true" tabindex="-1"></a><span class="in">vartype[fit$jchosen] &lt;- "Clustering"</span></span>
+<span id="cb9-746"><a href="#cb9-746" aria-hidden="true" tabindex="-1"></a><span class="in">for (j in jremove)</span></span>
+<span id="cb9-747"><a href="#cb9-747" aria-hidden="true" tabindex="-1"></a><span class="in">{</span></span>
+<span id="cb9-748"><a href="#cb9-748" aria-hidden="true" tabindex="-1"></a><span class="in">  y &lt;- x[, j]</span></span>
+<span id="cb9-749"><a href="#cb9-749" aria-hidden="true" tabindex="-1"></a><span class="in">  Xregr &lt;- x[, fit$jchosen]</span></span>
+<span id="cb9-750"><a href="#cb9-750" aria-hidden="true" tabindex="-1"></a><span class="in">  datregr &lt;- data.frame(y, Xregr)</span></span>
+<span id="cb9-751"><a href="#cb9-751" aria-hidden="true" tabindex="-1"></a><span class="in">  fitglm &lt;- glm(y ~ ., family = "poisson", data = datregr)</span></span>
+<span id="cb9-752"><a href="#cb9-752" aria-hidden="true" tabindex="-1"></a><span class="in">  fit1 &lt;- glm(y ~ 1, family = "poisson", data = datregr)</span></span>
+<span id="cb9-753"><a href="#cb9-753" aria-hidden="true" tabindex="-1"></a><span class="in">  modelscope &lt;- list(lower = formula(fit1), upper = formula(fitglm))</span></span>
+<span id="cb9-754"><a href="#cb9-754" aria-hidden="true" tabindex="-1"></a><span class="in">  fitglmb &lt;- step(fit1, scope = modelscope, k = log(N), trace = 0, direction = "forward")</span></span>
+<span id="cb9-755"><a href="#cb9-755" aria-hidden="true" tabindex="-1"></a><span class="in">  fitglmf &lt;- step(fitglm, scope = modelscope, k = log(N), trace = 0, direction = "backward")</span></span>
+<span id="cb9-756"><a href="#cb9-756" aria-hidden="true" tabindex="-1"></a><span class="in">  if (BIC(fitglmf) &lt; BIC(fitglmb)) {fitglms &lt;- fitglmf} else {fitglms &lt;- fitglmb}</span></span>
+<span id="cb9-757"><a href="#cb9-757" aria-hidden="true" tabindex="-1"></a><span class="in">  if (length(coef(fitglms)) &gt; 1)</span></span>
+<span id="cb9-758"><a href="#cb9-758" aria-hidden="true" tabindex="-1"></a><span class="in">  {</span></span>
+<span id="cb9-759"><a href="#cb9-759" aria-hidden="true" tabindex="-1"></a><span class="in">    vartype[j] &lt;- "Redundant"</span></span>
+<span id="cb9-760"><a href="#cb9-760" aria-hidden="true" tabindex="-1"></a><span class="in">    text(rep(j, G), xmeans[, j], rep("R", G), col = 1:G)</span></span>
+<span id="cb9-761"><a href="#cb9-761" aria-hidden="true" tabindex="-1"></a><span class="in">  } else {</span></span>
+<span id="cb9-762"><a href="#cb9-762" aria-hidden="true" tabindex="-1"></a><span class="in">    vartype[j] &lt;- "Irrelevant"</span></span>
+<span id="cb9-763"><a href="#cb9-763" aria-hidden="true" tabindex="-1"></a><span class="in">    text(rep(j, G), xmeans[, j], rep("I", G), col = 1:G)</span></span>
+<span id="cb9-764"><a href="#cb9-764" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
+<span id="cb9-765"><a href="#cb9-765" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb9-766"><a href="#cb9-766" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb9-767"><a href="#cb9-767" aria-hidden="true" tabindex="-1"></a><span class="in">matplot(1:P, t(xmeans), col = 1:G, type = "c", lty = 1, add = TRUE)</span></span>
+<span id="cb9-768"><a href="#cb9-768" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-769"><a href="#cb9-769" aria-hidden="true" tabindex="-1"></a>The variables discriminate the clusters pacing strategies of</span>
+<span id="cb9-770"><a href="#cb9-770" aria-hidden="true" tabindex="-1"></a>the runners are the number of laps covered during the last two thirds of</span>
+<span id="cb9-771"><a href="#cb9-771" aria-hidden="true" tabindex="-1"></a>the race (except during the 13th and 23rd hours). The number of laps</span>
+<span id="cb9-772"><a href="#cb9-772" aria-hidden="true" tabindex="-1"></a>covered during the first eight hours does not provide any additional</span>
+<span id="cb9-773"><a href="#cb9-773" aria-hidden="true" tabindex="-1"></a>clustering information, and even no information at all for the number of laps covered during the first hour.</span>
+<span id="cb9-774"><a href="#cb9-774" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-775"><a href="#cb9-775" aria-hidden="true" tabindex="-1"></a>@fig-Running-result3 plots the density map per clusters. Area of high density (red) indicates the hours and the corresponding average number of laps specific of each cluster.</span>
+<span id="cb9-776"><a href="#cb9-776" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-777"><a href="#cb9-777" aria-hidden="true" tabindex="-1"></a><span class="in">```{r ARIrunning, echo = FALSE, message = FALSE, warning=FALSE, fig.align='center'}</span></span>
+<span id="cb9-778"><a href="#cb9-778" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-Running-result3</span></span>
+<span id="cb9-779"><a href="#cb9-779" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Density maps per cluster"</span></span>
+<span id="cb9-780"><a href="#cb9-780" aria-hidden="true" tabindex="-1"></a><span class="in">ylim &lt;- range(x)</span></span>
+<span id="cb9-781"><a href="#cb9-781" aria-hidden="true" tabindex="-1"></a><span class="in">xlim &lt;- c(1, P)</span></span>
+<span id="cb9-782"><a href="#cb9-782" aria-hidden="true" tabindex="-1"></a><span class="in">xvec &lt;- 1:P</span></span>
+<span id="cb9-783"><a href="#cb9-783" aria-hidden="true" tabindex="-1"></a><span class="in">yvec &lt;- min(x):max(x)</span></span>
+<span id="cb9-784"><a href="#cb9-784" aria-hidden="true" tabindex="-1"></a><span class="in">xygrid &lt;- expand.grid(xvec, yvec)</span></span>
+<span id="cb9-785"><a href="#cb9-785" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-786"><a href="#cb9-786" aria-hidden="true" tabindex="-1"></a><span class="in">par(mfrow = c(3, 2))</span></span>
+<span id="cb9-787"><a href="#cb9-787" aria-hidden="true" tabindex="-1"></a><span class="in">par(mar = c(2.5, 3, 1.5, 1))</span></span>
+<span id="cb9-788"><a href="#cb9-788" aria-hidden="true" tabindex="-1"></a><span class="in">par(mgp = c(1.3, .4, 0))</span></span>
+<span id="cb9-789"><a href="#cb9-789" aria-hidden="true" tabindex="-1"></a><span class="in">for (g in 1:fit$bestfit$G)</span></span>
+<span id="cb9-790"><a href="#cb9-790" aria-hidden="true" tabindex="-1"></a><span class="in">{</span></span>
+<span id="cb9-791"><a href="#cb9-791" aria-hidden="true" tabindex="-1"></a><span class="in">  zmat &lt;- matrix(NA, P, length(yvec))</span></span>
+<span id="cb9-792"><a href="#cb9-792" aria-hidden="true" tabindex="-1"></a><span class="in">  Pchosen &lt;- length(fit$jchosen)</span></span>
+<span id="cb9-793"><a href="#cb9-793" aria-hidden="true" tabindex="-1"></a><span class="in">  for (p in 1:Pchosen)</span></span>
+<span id="cb9-794"><a href="#cb9-794" aria-hidden="true" tabindex="-1"></a><span class="in">  {</span></span>
+<span id="cb9-795"><a href="#cb9-795" aria-hidden="true" tabindex="-1"></a><span class="in">    zmat[fit$jchosen[p], ] &lt;- dpois(yvec, fit$bestfit$lambda[g, p])</span></span>
+<span id="cb9-796"><a href="#cb9-796" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb9-797"><a href="#cb9-797" aria-hidden="true" tabindex="-1"></a><span class="in">  rownames(zmat) &lt;- 1:P</span></span>
+<span id="cb9-798"><a href="#cb9-798" aria-hidden="true" tabindex="-1"></a><span class="in">  colnames(zmat) &lt;- yvec</span></span>
+<span id="cb9-799"><a href="#cb9-799" aria-hidden="true" tabindex="-1"></a><span class="in">  image(xvec, yvec, zmat, xlab = "Hour", ylab = "Laps", main = paste("Cluster ", g, sep = "", collapse = ""))</span></span>
+<span id="cb9-800"><a href="#cb9-800" aria-hidden="true" tabindex="-1"></a><span class="in">  matplot(t(x[fit$bestfit$classification == g, ]), xlim = xlim, ylim = ylim, type = "l", add = TRUE, col = "lightgray", lty = 1)</span></span>
+<span id="cb9-801"><a href="#cb9-801" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb9-802"><a href="#cb9-802" aria-hidden="true" tabindex="-1"></a><span class="in">par(mfrow = c(1, 1))</span></span>
+<span id="cb9-803"><a href="#cb9-803" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-804"><a href="#cb9-804" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-805"><a href="#cb9-805" aria-hidden="true" tabindex="-1"></a>Cluster 5  are clearly the most efficient runners. Looking at the running</span>
+<span id="cb9-806"><a href="#cb9-806" aria-hidden="true" tabindex="-1"></a>strategy in @fig-Running-result1 and @fig-Running-result3, we can see that they start as runners</span>
+<span id="cb9-807"><a href="#cb9-807" aria-hidden="true" tabindex="-1"></a>of Cluster 1 and Cluster 2, but they managed to keep a constant pace on</span>
+<span id="cb9-808"><a href="#cb9-808" aria-hidden="true" tabindex="-1"></a>the second part of the race, unlike those of the other two clusters</span>
+<span id="cb9-809"><a href="#cb9-809" aria-hidden="true" tabindex="-1"></a>which faltered. Runners of Cluster 3 has covered the fewest number of</span>
+<span id="cb9-810"><a href="#cb9-810" aria-hidden="true" tabindex="-1"></a>laps. Indeed, looking at their running strategy, we can see that most of these runners stop after the first third of</span>
+<span id="cb9-811"><a href="#cb9-811" aria-hidden="true" tabindex="-1"></a>the race. Cluster 6 is relatively similar to Cluster 3, but runners</span>
+<span id="cb9-812"><a href="#cb9-812" aria-hidden="true" tabindex="-1"></a>manage to continue running until half of the race is completed. Finally, Cluster 4 obtains</span>
+<span id="cb9-813"><a href="#cb9-813" aria-hidden="true" tabindex="-1"></a>slightly better results than Cluster 6, starting more carefully, and</span>
+<span id="cb9-814"><a href="#cb9-814" aria-hidden="true" tabindex="-1"></a>managing to run until the end of the race, even if the pace of the last</span>
+<span id="cb9-815"><a href="#cb9-815" aria-hidden="true" tabindex="-1"></a>hours is not very constant.</span>
+<span id="cb9-816"><a href="#cb9-816" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-817"><a href="#cb9-817" aria-hidden="true" tabindex="-1"></a>Finally, @fig-Running-result2 shows boxplots of the total number of loops covered by the runners in each of the clusters.</span>
+<span id="cb9-818"><a href="#cb9-818" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-819"><a href="#cb9-819" aria-hidden="true" tabindex="-1"></a><span class="in">```{r ARIrunning, echo = FALSE, message = FALSE, warning=FALSE, fig.align='center'}</span></span>
+<span id="cb9-820"><a href="#cb9-820" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-Running-result2</span></span>
+<span id="cb9-821"><a href="#cb9-821" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Number of loops covered by the runners of each clusters."</span></span>
+<span id="cb9-822"><a href="#cb9-822" aria-hidden="true" tabindex="-1"></a><span class="in">tmp &lt;- sort(as.vector(rowSums(x)), decreasing = TRUE, index.return = TRUE)</span></span>
+<span id="cb9-823"><a href="#cb9-823" aria-hidden="true" tabindex="-1"></a><span class="in">boxplot(rowSums(x) ~ map(Z), xlab = 'Cluster', ylab = 'Total number of laps')</span></span>
+<span id="cb9-824"><a href="#cb9-824" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-825"><a href="#cb9-825" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-826"><a href="#cb9-826" aria-hidden="true" tabindex="-1"></a><span class="fu"># Discussion</span></span>
+<span id="cb9-827"><a href="#cb9-827" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-828"><a href="#cb9-828" aria-hidden="true" tabindex="-1"></a>A method for clustering and variable selection for multivariate count data has been proposed. The method is shown to give excellent performance on both simulated and real data examples. The method selects set of relevant variables for clustering and other variables are not selected if they are irrelevant or redundate for clustering purposes. </span>
+<span id="cb9-829"><a href="#cb9-829" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-830"><a href="#cb9-830" aria-hidden="true" tabindex="-1"></a>The proposed method is shown to give interesting insights in the application domain, where some clusters members are shown to perform better overall to others and the benefits of constant (or near constant pacing) are shown. </span>
+<span id="cb9-831"><a href="#cb9-831" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-832"><a href="#cb9-832" aria-hidden="true" tabindex="-1"></a>The level of variable selection is determined by the relative performance of the two models (as shown in @sec-interpretation) is compared. Alternative models to the Poisson GLM model which have greater flexibility could lead to a smaller set of selected variables than the proposed method achieves. This is a topic for future research. </span>
+<span id="cb9-833"><a href="#cb9-833" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-834"><a href="#cb9-834" aria-hidden="true" tabindex="-1"></a>The proposed method is based on a conditionally independent Poisson mixture model for the selected variables. It could be argued that the conditional independence assumption is unrealistic in the application. @Hand2001 consider the implication of incorrectly assuming conditional independence in a classification setting and show that it can make the group membership probabilities over confident. Furthermore, in the conditional independent Poisson mixture model, the number of clusters can be upwardly biased, where extra clusters are included to model dependence in the data. The approach taken in the paper could be extended to use other multivariate count distributions, including multivariate distributions without the conditional independence assumption <span class="co">[</span><span class="ot">eg. @Karlis2018; @Karlis_2007; @Inouye_2017</span><span class="co">]</span>.</span>
+<span id="cb9-835"><a href="#cb9-835" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-836"><a href="#cb9-836" aria-hidden="true" tabindex="-1"></a>The code for the proposed approach will be made available as an R package. </span>
+<span id="cb9-837"><a href="#cb9-837" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-838"><a href="#cb9-838" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-839"><a href="#cb9-839" aria-hidden="true" tabindex="-1"></a><span class="fu"># Acknowlegements</span></span>
+<span id="cb9-840"><a href="#cb9-840" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-841"><a href="#cb9-841" aria-hidden="true" tabindex="-1"></a>This work was supported by the Science Foundation Ireland Insight</span>
+<span id="cb9-842"><a href="#cb9-842" aria-hidden="true" tabindex="-1"></a>Research Centre (SFI/12/RC/2289_P2) and a visit to the Collegium --</span>
+<span id="cb9-843"><a href="#cb9-843" aria-hidden="true" tabindex="-1"></a>Institut d'Études Avancées de Lyon.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
     <script type="text/javascript">
