@@ -10,10 +10,10 @@ library("plotly")
 library("seriation")
 library("magick")
 library("ggplot2")
-library("poissonmix")
 library("gridExtra")
 library("dplyr")
 library("tidyr")
+source("functions/poissonmix.R")
 ```
 
 # Introduction
