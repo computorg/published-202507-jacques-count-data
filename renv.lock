@@ -994,12 +994,17 @@
     "poissonmix": {
       "Package": "poissonmix",
       "Version": "0.1",
-      "Source": "unknown",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "poissonmix",
+      "RemoteUsername": "JuJacques",
+      "RemoteSha": "5ccdebe4bccd82203d1b407769b9551e0121e0a0",
       "Requirements": [
         "R",
         "mclust"
       ],
-      "Hash": "9ea5371da8ca270dcffed7ecb975841e"
+      "Hash": "3f9d3a2e4e07ce53abd8bd59abb9659b"
     },
     "prettyunits": {
       "Package": "prettyunits",
