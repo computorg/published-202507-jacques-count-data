@@ -991,6 +991,16 @@
       ],
       "Hash": "a1ac5c03ad5ad12b9d1597e00e23c3dd"
     },
+    "poissonmix": {
+      "Package": "poissonmix",
+      "Version": "0.1",
+      "Source": "unknown",
+      "Requirements": [
+        "R",
+        "mclust"
+      ],
+      "Hash": "9ea5371da8ca270dcffed7ecb975841e"
+    },
     "prettyunits": {
       "Package": "prettyunits",
       "Version": "1.2.0",

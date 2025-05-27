@@ -13,7 +13,8 @@ library("ggplot2")
 library("gridExtra")
 library("dplyr")
 library("tidyr")
-remotes::install_github("jujacques/poissonmix")
+library("remotes")
+library("poissonmix")
 theme_set(theme_minimal())
 ```
 
