@@ -25,7 +25,7 @@ Count data are often treated as continuous data and therefore modeled by a
 Gaussian distribution, this assumption is particularly poor when the
 measured counts are low. Instead, we use the reference
 distribution for count data which is the Poisson distribution
-[@Agresti_2002; @Inouye1998].
+[@Agresti_2002; @Inouye2017].
 
 When a data set is heterogeneous, clustering allows to extract
 homogeneous subsets from the whole data set. Many clustering methods,
@@ -830,9 +830,7 @@ selection is conducted on this regression, if the regression model has any
 predictor variables, then the variable is called "redundant" and if the
 regression model has no predictor variables, then the variable is called
 "irrelevant".
-@fig-Running-result1 shows the cluster mean for each variable, where the
-label indicates if the variable is irrelevant for clustering ("I"),
-redundant ("R") or useful (the label is then the cluster number).
+@fig-Running-result1 shows the cluster mean for each variable, where the label indicates if the variable is irrelevant for clustering (“I”), redundant (“R”) or useful (then the point is unlabelled).
 
 ```{r plotrunning, echo=FALSE, fig.align='center', cache = TRUE}
 #| label: fig-Running-result1
@@ -970,11 +968,11 @@ slightly better results than Cluster 6, starting more carefully, and
 managing to run until the end of the race, even if the pace of the last
 hours is not very constant.
 
-Finally, @fig-Running-result2 shows boxplots of the total number of loops covered by the runners in each of the clusters.
+Finally, @fig-Running-result2 shows boxplots of the total number of loops covered by the runners of each of the clusters.
 
 ```{r ARIrunning, echo = FALSE, message = FALSE, warning=FALSE, fig.align='center'}
 #| label: fig-Running-result2
-#| fig-cap: "Number of loops covered by the runners of each clusters."
+#| fig-cap: "Number of loops covered by the runners of each of the clusters."
 df <- data.frame(
   total_laps = rowSums(x),
   cluster = as.factor(map(Z))
