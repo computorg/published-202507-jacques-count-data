@@ -1,1 +1,1 @@
-sudo apt-get -y install libmagick++-6.q16-dev libpoppler-cpp-dev
+sudo apt-get -y install libmagick++-6.q16-dev libpoppler-cpp-dev libcurl4-openssl-dev libpng-dev 
