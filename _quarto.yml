@@ -27,6 +27,8 @@ citation:
   issn: "2824-7795"
 bibliography: references.bib
 google-scholar: true
+github-user: computorg
+repo: "published-202507-jacques-count-data"
 draft: false
 published: true
 format:
