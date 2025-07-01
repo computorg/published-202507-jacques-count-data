@@ -26,7 +26,8 @@ citation:
   publisher: "French Statistical Society"
   issn: "2824-7795"
 bibliography: references.bib
-draft: true
+google-scholar: true
+draft: false
 published: true
 format:
   computo-html: default

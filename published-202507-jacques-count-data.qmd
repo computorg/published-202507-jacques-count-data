@@ -25,7 +25,7 @@ Count data are often treated as continuous data and therefore modeled by a
 Gaussian distribution, this assumption is particularly poor when the
 measured counts are low. Instead, we use the reference
 distribution for count data which is the Poisson distribution
-[@Agresti_2002; @Inouye2017].
+[@Agresti_2002; @Inouye_2017].
 
 When a data set is heterogeneous, clustering allows to extract
 homogeneous subsets from the whole data set. Many clustering methods,
