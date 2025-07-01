@@ -1,6 +1,6 @@
 project:
   render:
-    - publication-202507-jacques-count-data.qmd
+    - published-202507-jacques-count-data.qmd
 
 title: "Model-Based Clustering and Variable Selection for Multivariate Count Data"
 author:
