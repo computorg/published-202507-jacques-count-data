@@ -10,6 +10,6 @@
 Authors: 
 
 - [Julien Jacques](https://eric.univ-lyon2.fr/jjacques/)
-- [Thomas Brendan Murphy](https://mststats.github.io/author/thomas-brendan-murphy/)
+- [Thomas Brendan Murphy](https://people.ucd.ie/brendan.murphy)
 
 Model-based clustering provides a principled way of developing clustering methods. We develop a new model-based clustering methods for count data. The method combines clustering and variable selection for improved clustering. The method is based on conditionally independent Poisson mixture models and Poisson generalized linear models. The method is demonstrated on simulated data and data from an ultra running race, where the method yields excellent clustering and variable selection performance.
