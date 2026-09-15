@@ -29,6 +29,7 @@ citation:
   publisher: "French Statistical Society"
   issn: "2824-7795"
   url: "https://computo-journal.org/published-202507-jacques-count-data/"
+  pdf-url: "https://computo-journal.org/published-202507-jacques-count-data/main.pdf"
   issued: "2025-07-01"
 bibliography: references.bib
 google-scholar: true
