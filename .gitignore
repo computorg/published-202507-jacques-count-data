@@ -72,3 +72,5 @@ cache/
 .DS_Store
 .claude/
 # <<< computorg base <<<
+
+/.quarto/
